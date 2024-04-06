@@ -67,52 +67,35 @@
     src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/izitoast/1.4.0/js/iziToast.min.js">
 </script>
 <meta name="generator" content="Hexo 5.4.2"></head
-  <!DOCTYPE html>  
-<html>  
-<head>  
-    <style>  
-        body {  
-            /* 初始背景颜色或图片 */  
-            background-color: #f0f0f0;  
-            transition: background-image 0.5s ease; /* 添加过渡效果 */  
-        }  
-    </style>  
-</head>  
-<body>  
-    <!-- 你的网页内容 -->  
-    <script>  
-        // 假设你有一个API的URL，它返回图片的URL  
-        const apiUrl = 'https://api.wukeke.top'; // 确保这个URL是正确的，并且API返回期望的数据  
+    const apiUrl = 'https://api.wukeke.top/'; // API的URL  
+const apiKey = 'YOUR_API_KEY'; // 如果有API密钥，请替换为您的密钥  
   
-        // 发送请求到API  
-        fetch(apiUrl) // 确保这里URL被引号包围  
-            .then(response => {  
-                if (!response.ok) {  
-                    throw new Error('Network response was not ok.');  
-                }  
-                return response.json(); // 假设API返回JSON格式的数据  
-            })  
-            .then(data => {  
-                // 根据API的实际响应结构提取图片的URL  
-                // 假设data.imageUrl是API返回的图片URL，这需要根据实际情况调整  
-                if (data && data.imageUrl) {  
-                    const imageUrl = data.imageUrl;  
-                    // 设置背景图片  
-                    document.body.style.backgroundImage = `url(${imageUrl})`;  
-                    // 可选：添加背景图片的其他样式  
-                    document.body.style.backgroundRepeat = 'no-repeat';  
-                    document.body.style.backgroundSize = 'cover';  
-                } else {  
-                    console.error('No image URL found in the API response.');  
-                }  
-            })  
-            .catch(error => {  
-                console.error('Error fetching image URL:', error);  
-                // 可以在这里添加一些用户反馈，比如显示一个错误消息  
-            });  
-    </script>  
-</body>  
-</html>
+// 使用fetch API发起GET请求  
+fetch(apiUrl, {  
+    method: 'GET', // 或者 'POST'，取决于API的要求  
+    headers: {  
+        'Authorization': `Bearer ${apiKey}`, // 如果API需要身份验证，添加适当的头部  
+        'Content-Type': 'application/json' // 如果请求体包含JSON数据，请添加此头部  
+    },  
+    // 如果有请求体数据，可以像这样添加：  
+    // body: JSON.stringify({ /* 请求参数 */ })  
+})  
+.then(response => {  
+    // 检查响应是否成功  
+    if (!response.ok) {  
+        throw new Error('Network response was not ok: ' + response.status);  
+    }  
+    // 解析JSON数据  
+    return response.json();  
+})  
+.then(data => {  
+    // 在这里处理数据  
+    console.log(data);  
+})  
+.catch(error => {  
+    // 在这里处理错误  
+    console.error('There has been a problem with your fetch operation:', error);  
+});
 </head>  
 
 
