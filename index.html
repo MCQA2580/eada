@@ -67,6 +67,41 @@
     src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/izitoast/1.4.0/js/iziToast.min.js">
 </script>
 <meta name="generator" content="Hexo 5.4.2"></head
+    <!DOCTYPE html>  
+<html>  
+<head>  
+    <style>  
+        body {  
+            /* 初始背景颜色或图片 */  
+            background-color: #f0f0f0;  
+            transition: background-image 0.5s ease; /* 添加过渡效果 */  
+        }  
+    </style>  
+</head>  
+<body>  
+    <!-- 你的网页内容 -->  
+    <script>  
+        // 假设你有一个API的URL，它返回图片的URL  
+        const apiUrl = 'https://api.wukeke.top';  
+  
+        // 发送请求到API  
+        fetch(https://api.wukeke.top)  
+            .then(response => response.json()) // 假设API返回JSON格式的数据  
+            .then(data => {  
+                // 假设data.imageUrl是API返回的图片URL  
+                const imageUrl = data.imageUrl;  
+                // 设置背景图片  
+                document.body.style.backgroundImage = `url(${imageUrl})`;  
+                // 可选：添加背景图片的其他样式  
+                document.body.style.backgroundRepeat = 'no-repeat';  
+                document.body.style.backgroundSize = 'cover';  
+            })  
+            .catch(error => {  
+                console.error('Error fetching image URL:', error);  
+            });  
+    </script>  
+</body>  
+</html>
 </head>  
 
 
