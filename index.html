@@ -67,7 +67,7 @@
     src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/izitoast/1.4.0/js/iziToast.min.js">
 </script>
 <meta name="generator" content="Hexo 5.4.2"></head
-    <!DOCTYPE html>  
+  <!DOCTYPE html>  
 <html>  
 <head>  
     <style>  
@@ -82,22 +82,33 @@
     <!-- 你的网页内容 -->  
     <script>  
         // 假设你有一个API的URL，它返回图片的URL  
-        const apiUrl = 'https://api.wukeke.top';  
+        const apiUrl = 'https://api.wukeke.top'; // 确保这个URL是正确的，并且API返回期望的数据  
   
         // 发送请求到API  
-        fetch(https://api.wukeke.top)  
-            .then(response => response.json()) // 假设API返回JSON格式的数据  
+        fetch(apiUrl) // 确保这里URL被引号包围  
+            .then(response => {  
+                if (!response.ok) {  
+                    throw new Error('Network response was not ok.');  
+                }  
+                return response.json(); // 假设API返回JSON格式的数据  
+            })  
             .then(data => {  
-                // 假设data.imageUrl是API返回的图片URL  
-                const imageUrl = data.imageUrl;  
-                // 设置背景图片  
-                document.body.style.backgroundImage = `url(${imageUrl})`;  
-                // 可选：添加背景图片的其他样式  
-                document.body.style.backgroundRepeat = 'no-repeat';  
-                document.body.style.backgroundSize = 'cover';  
+                // 根据API的实际响应结构提取图片的URL  
+                // 假设data.imageUrl是API返回的图片URL，这需要根据实际情况调整  
+                if (data && data.imageUrl) {  
+                    const imageUrl = data.imageUrl;  
+                    // 设置背景图片  
+                    document.body.style.backgroundImage = `url(${imageUrl})`;  
+                    // 可选：添加背景图片的其他样式  
+                    document.body.style.backgroundRepeat = 'no-repeat';  
+                    document.body.style.backgroundSize = 'cover';  
+                } else {  
+                    console.error('No image URL found in the API response.');  
+                }  
             })  
             .catch(error => {  
                 console.error('Error fetching image URL:', error);  
+                // 可以在这里添加一些用户反馈，比如显示一个错误消息  
             });  
     </script>  
 </body>  
