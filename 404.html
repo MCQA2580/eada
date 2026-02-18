@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
-
 <head>
-  <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="author" content="名" />
-  <title>一个导航 - OneNav</title>
-  <meta name="keywords" content="网址导航">
-  <meta name="description" content="OneNav">
+  <title>404 - 次元迷路啦 - OneNav</title>
+  <meta name="keywords" content="网址导航,404,页面未找到,动漫风">
+  <meta name="description" content="OneNav - 你闯入了未知次元！快返回导航首页继续探索吧～">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://s1.hdslb.com/bfs/static/jinkela/long/font/regular.css" />
   
@@ -34,51 +31,191 @@
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
-        
 <script src="/js/html5shiv.min.js"></script>
-
-        
 <script src="/js/respond.min.js"></script>
-
     <![endif]-->
   <!-- / FB Open Graph -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://www.mcqa25.dpdns.org/404.html">
-  <meta property="og:title" content="一个导航 - OneNav - OneNav">
-  <meta property="og:description" content="OneNav">
-  <meta property="og:site_name" content="一个导航 - OneNav - OneNav">
+  <meta property="og:title" content="404 - 次元迷路啦 - OneNav">
+  <meta property="og:description" content="OneNav - 你闯入了未知次元！快返回导航首页继续探索吧～">
+  <meta property="og:site_name" content="OneNav">
   
   <meta property="og:image" content="/images/webstack_banner_cn.png">
   
   <!-- / Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="一个导航 - OneNav - OneNav">
-  <meta name="twitter:description" content="OneNav">
+  <meta name="twitter:title" content="404 - 次元迷路啦 - OneNav">
+  <meta name="twitter:description" content="OneNav - 你闯入了未知次元！快返回导航首页继续探索吧～">
   
   <meta name="twitter:image" content="/images/webstack_banner_cn.png">
   
+  <!-- Izitoast -->
+  <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/izitoast/1.4.0/css/iziToast.min.css">
+  <script type="text/javascript" src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/izitoast/1.4.0/js/iziToast.min.js"></script>
   
-  <!-- 直接添加html内容即可 -->
-<!-- 可设置多行 -->
-<!-- Izitoast -->
-<link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/izitoast/1.4.0/css/iziToast.min.css">
-<script type="text/javascript"
-    src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/izitoast/1.4.0/js/iziToast.min.js">
-</script>
+  <meta name="generator" content="Hexo 5.4.2">
   
-<meta name="generator" content="Hexo 5.4.2"></head>
-
-</head>
-
-
-
-<style>
+  <!-- 动漫风404专属样式 -->
+  <style>
     footer.main-footer {
         position: absolute;
         bottom: 0;
         width: 100%;
     }
-</style>
+    
+    /* 动漫风404核心样式 */
+    .anime-error-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 60vh;
+        text-align: center;
+        padding: 40px 20px;
+        background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+        border-radius: 16px;
+        margin: 20px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    }
+    
+    /* 动漫插画容器 */
+    .anime-illustration {
+        width: 220px;
+        height: 220px;
+        margin-bottom: 20px;
+        /* 二次元迷路少女插画（可替换为自己的图片） */
+        background: url("https://konachan.net/data/preview/8f/cf/8fcf9c52a5bed28762c08726fdb39f17.jpg") center/contain no-repeat;
+        animation: bounce 2s ease-in-out infinite;
+    }
+    
+    /* 404数字动漫风样式 */
+    .anime-error-code {
+        font-size: 7rem;
+        font-weight: 800;
+        background: linear-gradient(90deg, #ff6b9d, #487fee);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 15px;
+        text-shadow: 0 2px 8px rgba(255,107,157,0.2);
+    }
+    
+    /* 动漫风文案 */
+    .anime-error-message {
+        font-size: 1.5rem;
+        color: #555;
+        margin-bottom: 30px;
+        line-height: 1.8;
+        font-family: "Microsoft YaHei", "幼圆", sans-serif;
+    }
+    
+    .anime-error-message span {
+        color: #ff6b9d;
+        font-weight: 600;
+    }
+    
+    /* 动漫风按钮 */
+    .anime-actions {
+        display: flex;
+        gap: 15px;
+        margin-top: 10px;
+    }
+    
+    .anime-btn {
+        padding: 12px 30px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: none;
+        font-family: "Microsoft YaHei", "幼圆", sans-serif;
+    }
+    
+    .anime-btn-primary {
+        background: linear-gradient(90deg, #ff6b9d, #ff8e53);
+        color: white;
+        box-shadow: 0 4px 15px rgba(255,107,157,0.3);
+    }
+    
+    .anime-btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(255,107,157,0.4);
+        color: white;
+    }
+    
+    .anime-btn-outline {
+        background-color: transparent;
+        border: 2px solid #487fee;
+        color: #487fee;
+    }
+    
+    .anime-btn-outline:hover {
+        background-color: #f0f7ff;
+        transform: translateY(-3px);
+    }
+    
+    /* 动漫风动画 */
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-15px); }
+    }
+    
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-10px) rotate(2deg); }
+    }
+    
+    /* 响应式适配 */
+    @media (max-width: 768px) {
+        .anime-error-code {
+            font-size: 5rem;
+        }
+        .anime-error-message {
+            font-size: 1.2rem;
+        }
+        .anime-illustration {
+            width: 180px;
+            height: 180px;
+        }
+        .anime-actions {
+            flex-direction: column;
+            width: 100%;
+            max-width: 300px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .anime-error-code {
+            font-size: 4rem;
+        }
+        .anime-illustration {
+            width: 150px;
+            height: 150px;
+        }
+    }
+
+    /* 夜间模式适配 */
+    body.night .anime-error-container {
+        background: linear-gradient(120deg, #2c3e50 0%, #1a2530 100%);
+    }
+    
+    body.night .anime-error-message {
+        color: #e0e0e0;
+    }
+    
+    body.night .anime-btn-outline {
+        border-color: #6ba5ff;
+        color: #6ba5ff;
+        background: transparent;
+    }
+    
+    body.night .anime-btn-outline:hover {
+        background-color: rgba(107, 165, 255, 0.1);
+    }
+  </style>
+</head>
 
 <body class="page-body">
     <!--加载动画-->
@@ -112,48 +249,38 @@
                 <ul id="main-menu" class="main-menu">
                     
                     <li class="">
-                        
-                            <a href="/#常用网站" class="smooth">
-                                
-                                <i class="fa-solid fa-star"></i>
-                                <span class="title">常用网站</span>
-                            </a>
+                        <a href="/#常用网站" class="smooth">
+                            <i class="fa-solid fa-star"></i>
+                            <span class="title">常用网站</span>
+                        </a>
                     </li>
                     
                     <li class="">
-                        
-                            <a href="/#网页工具" class="smooth">
-                                
-                                <i class="fa-solid fa-screwdriver-wrench"></i>
-                                <span class="title">网页工具</span>
-                            </a>
+                        <a href="/#网页工具" class="smooth">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                            <span class="title">网页工具</span>
+                        </a>
                     </li>
                     
                     <li class="">
-                        
-                            <a href="/#素材资源" class="smooth">
-                                
-                                <i class="fa-solid fa-marker"></i>
-                                <span class="title">素材资源</span>
-                            </a>
+                        <a href="/#素材资源" class="smooth">
+                            <i class="fa-solid fa-marker"></i>
+                            <span class="title">素材资源</span>
+                        </a>
                     </li>
                     
                     <li class="">
-                        
-                            <a href="/#知识教程" class="smooth">
-                                
-                                <i class="fa-solid fa-graduation-cap"></i>
-                                <span class="title">知识教程</span>
-                            </a>
+                        <a href="/#知识教程" class="smooth">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span class="title">知识教程</span>
+                        </a>
                     </li>
                     
                     <li class="">
-                        
-                            <a href="/#前端框架" class="smooth">
-                                
-                                <i class="fa-solid fa-laptop"></i>
-                                <span class="title">前端框架</span>
-                            </a>
+                        <a href="/#前端框架" class="smooth">
+                            <i class="fa-solid fa-laptop"></i>
+                            <span class="title">前端框架</span>
+                        </a>
                     </li>
                     
                     <hr style="margin-bottom: 32px; border-top: none;" />
@@ -196,11 +323,21 @@
                     </li>
                 </ul>
             </nav>
-            <!-- 主体内容 -->
-            <div class="panel-body">
-                <h4><i class="fa-solid fa-circle-exclamation"></i>404</h4>
-                <p>哎呀，网页走丢了 ~<br>您可能输入了错误的地址或该地址已被删除</p>
+            
+            <!-- 动漫风404主体内容区域 -->
+            <div class="anime-error-container">
+                <div class="anime-illustration"></div>
+                <div class="anime-error-code">404</div>
+                <div class="anime-error-message">
+                    ヾ(≧∇≦)ﾉ 糟糕！<span>次元通道迷路啦</span>～<br>
+                    你访问的页面不在这个次元，快返回导航首页继续探索吧
+                </div>
+                <div class="anime-actions">
+                    <a href="/" class="anime-btn anime-btn-primary">✨ 返回导航首页</a>
+                    <a href="/#常用网站" class="anime-btn anime-btn-outline">🎮 探索常用网站</a>
+                </div>
             </div>
+            
             <!-- 悬浮窗 -->
             <div class="wapnone fk_service">
                 <ul>
@@ -229,6 +366,7 @@
                 </ul>
             </div>
             <!-- 悬浮窗 end -->
+            
             <script>
                 (function () {
                     if (document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") === '') {
@@ -251,44 +389,27 @@
                 })();
             </script>
             <script>
-                document.title = '404 - OneNav';
+                document.title = '404 - 次元迷路啦 - OneNav';
             </script>
-<footer class="main-footer sticky footer-type-1">
-  <div class="footer-inner">
-    <!-- Add your copyright text here -->
-    <p>
-      
-      &copy; 2020 - 2022
-      <a href="https://www.imsyy.top" target="_blank"><strong>名</strong></a> | Design by <a href="http:/" target="_blank"><strong>Viggo</strong></a> | Power by <a href="https://www.mcqa25.dpdns.org/" target="_blank"><strong>Hexo</strong></a> & <a href="https://github.com/HCLonely/hexo-theme-webstack/" target="_blank"><strong>hexo-theme-webstack</strong></a>
-    </p>
-    <!-- <div class="go-up">
-      <a href="#" rel="go-top">
-        <i class="fas fa-angle-up"></i>
-      </a>
-    </div> -->
-  </div>
-</footer>
-</div>
-</div>
+            
+            <footer class="main-footer sticky footer-type-1">
+              <div class="footer-inner">
+                <p>
+                  &copy; 2020 - 2022
+                  <a href="https://www.imsyy.top" target="_blank"><strong>名</strong></a> | Design by <a href="http:/" target="_blank"><strong>Viggo</strong></a> | Power by <a href="https://www.mcqa25.dpdns.org/" target="_blank"><strong>Hexo</strong></a> & <a href="https://github.com/HCLonely/hexo-theme-webstack/" target="_blank"><strong>hexo-theme-webstack</strong></a>
+                </p>
+              </div>
+            </footer>
+        </div>
+    </div>
 
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/TweenLite.min.js"></script>
-<script src="/js/resizeable.min.js"></script>
-<script src="/js/joinable.js"></script>
-<script src="/js/xenon-api.min.js"></script>
-<script src="/js/xenon-toggles.min.js"></script>
-<script src="/js/xenon-custom.min.js"></script>
-
-
-
-<script src="/js/lozad.min.js"></script>
-
-
-
-
-<!-- 直接添加html内容即可 -->
-<!-- 可设置多行 -->
-
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/TweenLite.min.js"></script>
+    <script src="/js/resizeable.min.js"></script>
+    <script src="/js/joinable.js"></script>
+    <script src="/js/xenon-api.min.js"></script>
+    <script src="/js/xenon-toggles.min.js"></script>
+    <script src="/js/xenon-custom.min.js"></script>
+    <script src="/js/lozad.min.js"></script>
 </body>
-
 </html>
