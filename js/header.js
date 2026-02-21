@@ -22,61 +22,26 @@ window.onscroll = function () {
     }
 }
 
-//夜间模式切换
+//强制夜间模式
 function dark() {
     document.body.classList.add('night');
     document.cookie = "night=1;path=/";
-    document.getElementById("fk_service_text").innerHTML = "切换日间模式";
-    iziToast.info({
-        timeout: 4000,
-        icon: 'Fontawesome',
-        closeOnEscape: 'true',
-        transitionOut: 'fadeOutRight',
-        displayMode: 'replace',
-        layout: '2',
-        transitionIn: 'bounceInLeft',
-        position: 'topRight',
-        icon: 'fa-solid fa-moon',
-        backgroundColor: '#fff',
-        title: '夜间模式切换',
-        message: '已切换为夜间模式'
-    });
 }
 
-function light() {
-    document.body.classList.remove('night');
-    document.cookie = "night=0;path=/";
-    document.getElementById("fk_service_text").innerHTML = "切换夜间模式";
-    iziToast.info({
-        timeout: 4000,
-        icon: 'Fontawesome',
-        closeOnEscape: 'true',
-        transitionOut: 'fadeOutRight',
-        displayMode: 'replace',
-        layout: '2',
-        transitionIn: 'bounceInLeft',
-        position: 'topRight',
-        icon: 'fa-solid fa-sun',
-        backgroundColor: '#fff',
-        title: '日间模式切换',
-        message: '已切换为日间模式'
-    });
-}
+//页面加载时强制启用夜间模式
+window.addEventListener('load', function() {
+    dark();
+});
 
+//移除模式切换功能
 function switchNightMode() {
-    var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
-    if (night == '0') {
-        dark();
-    } else {
-        light();
-    }
+    // 强制保持夜间模式
+    dark();
 }
 
+//移除系统偏好检测，强制使用夜间模式
 window.matchMedia('(prefers-color-scheme: dark)')
     .addEventListener('change', event => {
-        if (event.matches) {
-            dark();
-        } else {
-            light();
-        }
+        // 无论系统设置如何，始终使用夜间模式
+        dark();
     })
