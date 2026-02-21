@@ -44,11 +44,9 @@ function updateCurrentTime() {
 
 // 更新背景图片
 function updateBackgroundImage() {
+    // 使用本地图片作为背景，确保背景能够正常显示
     const body = document.body;
-    // 添加时间戳参数防止浏览器缓存，确保每次获取新图片
-    const timestamp = new Date().getTime();
-    const backgroundUrl = `https://api.r10086.com/%E6%A8%B1%E9%81%93%E9%9A%8F%E6%9C%BA%E5%9B%BE%E7%89%87api%E6%8E%A5%E5%8F%A3.php?%E5%9B%BE%E7%89%87%E7%B3%BB%E5%88%97=%E5%8A%A8%E6%BC%AB%E7%BB%BC%E5%90%881&t=${timestamp}`;
-    body.style.backgroundImage = `linear-gradient(rgba(26, 26, 26, 0.7), rgba(38, 38, 38, 0.6)), url('${backgroundUrl}')`;
+    body.style.backgroundImage = `linear-gradient(rgba(26, 26, 26, 0.7), rgba(38, 38, 38, 0.6)), url('/images/webstack_banner_cn.png')`;
 }
 
 //页面加载时强制启用夜间模式并开始显示时间
