@@ -13,7 +13,7 @@ $(document).ready(function () {
     } else {
       $('.has-sub ul').each(function (id, ele) {
         var _that = $(this)
-        if (_this.find('ul')[0] != ele && !expandAll) {
+        if (_this.find('ul')[0] != ele) {
           setTimeout(function () {
             _that.attr("style", "")
           }, 300);
@@ -35,8 +35,11 @@ $(document).ready(function () {
   $("a.smooth").click(function (ev) {
     ev.preventDefault();
 
-    public_vars.$mainMenu.add(public_vars.$sidebarProfile).toggleClass('mobile-is-visible');
-    ps_destroy();
+    $("#main-menu li").each(function () {
+      $(this).removeClass("active");
+    });
+    $(this).parent("li").addClass("active");
+    
     $("html, body").animate({
       scrollTop: $($(this).attr("href")).offset().top - 30
     }, {
@@ -45,18 +48,6 @@ $(document).ready(function () {
     });
   });
   return false;
-});
-
-var href = "";
-var pos = 0;
-$("a.smooth").click(function (e) {
-  $("#main-menu li").each(function () {
-    $(this).removeClass("active");
-  });
-  $(this).parent("li").addClass("active");
-  e.preventDefault();
-  href = $(this).attr("href");
-  pos = $(href).position().top - 30;
 });
 (function () {
   if (document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") === '') {
