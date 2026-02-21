@@ -216,10 +216,12 @@ body {
 .sidebar-menu.fixed {
     height: 100vh;
     min-height: 100%;
+    position: sticky;
+    top: 0;
 }
 
 .sidebar-menu.fixed .sidebar-menu-inner {
-    position: fixed;
+    position: relative;
     left: 0;
     top: 0;
     bottom: 0;
