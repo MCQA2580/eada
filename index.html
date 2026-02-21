@@ -3,7 +3,6 @@
 <html lang="zh-CN">
    
 <head>
-  <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,7 +12,7 @@
   <meta name="keywords" content="网址导航">
   <meta name="description" content="导航">
   <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="stylesheet" href="https://s1.hdslb.com/bfs/static/jinkela/long/font/regular.css" />
+
   
 <link rel="stylesheet" href="/css/style.min.css">
 <link rel="stylesheet" href="/css/dark.min.css">
@@ -42,13 +41,9 @@ body {
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
-        
-<script src="/js/html5shiv.min.js"></script>
-
-        
-<script src="/js/respond.min.js"></script>
-
-    <![endif]-->
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
   <!-- / FB Open Graph -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://">
@@ -66,43 +61,7 @@ body {
   <meta name="twitter:image" content="/images/webstack_banner_cn.png">
   
   
-  <!-- 直接添加html内容即可 -->
-<!-- 可设置多行 -->
-<!-- Izitoast --
-<link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/izitoast/1.4.0/css/iziToast.min.css">
-<script type="text/javascript"
-    src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/izitoast/1.4.0/js/iziToast.min.js">
-</script>
-<meta name="generator" content="Hexo 5.4.2"></head
-    const apiUrl = 'https://api.wukeke.top/'; // API的URL  
-const apiKey = 'YOUR_API_KEY'; // 如果有API密钥，请替换为您的密钥  
-  
-// 使用fetch API发起GET请求  
-fetch(apiUrl, {  
-    method: 'GET', // 或者 'POST'，取决于API的要求  
-    headers: {  
-        'Authorization': `Bearer ${apiKey}`, // 如果API需要身份验证，添加适当的头部  
-        'Content-Type': 'application/json' // 如果请求体包含JSON数据，请添加此头部  
-    },  
-    // 如果有请求体数据，可以像这样添加：  
-    // body: JSON.stringify({ /* 请求参数 */ })  
-})  
-.then(response => {  
-    // 检查响应是否成功  
-    if (!response.ok) {  
-        throw new Error('Network response was not ok: ' + response.status);  
-    }  
-    // 解析JSON数据  
-    return response.json();  
-})  
-.then(data => {  
-    // 在这里处理数据  
-    console.log(data);  
-})  
-.catch(error => {  
-    // 在这里处理错误  
-    console.error('There has been a problem with your fetch operation:', error);  
-});
+  <meta name="generator" content="Hexo 5.4.2">
 </head>  
 
 
