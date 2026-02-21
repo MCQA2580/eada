@@ -214,7 +214,8 @@ body {
 }
 
 .sidebar-menu.fixed {
-    height: 100%
+    height: 100vh;
+    min-height: 100%;
 }
 
 .sidebar-menu.fixed .sidebar-menu-inner {
@@ -223,7 +224,26 @@ body {
     top: 0;
     bottom: 0;
     width: inherit;
-    overflow: hidden
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* 自定义侧边栏滚动条 */
+.sidebar-menu.fixed .sidebar-menu-inner::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar-menu.fixed .sidebar-menu-inner::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-menu.fixed .sidebar-menu-inner::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+.sidebar-menu.fixed .sidebar-menu-inner::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .page-body.right-sidebar .sidebar-menu.fixed .sidebar-menu-inner {
