@@ -95,6 +95,10 @@ body {
     z-index: 1
 }
 
+.sidebar-menu.collapsed {
+    width: 80px;
+}
+
 .sidebar-menu .main-menu {
     padding-left: 20px;
     padding-right: 20px;
@@ -618,10 +622,14 @@ body {
     padding-left: 260px;
     word-break: break-word;
     width: 100%;
-    -webkit-transition: opacity .1s ease-in-out;
-    -moz-transition: opacity .1s ease-in-out;
-    -o-transition: opacity .1s ease-in-out;
-    transition: opacity .1s ease-in-out
+    -webkit-transition: opacity .1s ease-in-out, padding-left .3s ease-in-out;
+    -moz-transition: opacity .1s ease-in-out, padding-left .3s ease-in-out;
+    -o-transition: opacity .1s ease-in-out, padding-left .3s ease-in-out;
+    transition: opacity .1s ease-in-out, padding-left .3s ease-in-out
+}
+
+.sidebar-menu.collapsed + .main-content {
+    padding-left: 80px;
 }
 
 .tooltip-inner {
