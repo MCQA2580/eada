@@ -28,6 +28,22 @@
     <script>
         var userDefinedSearchData = {};
         var expandAll = false;
+        
+        // 预加载图片
+        function preloadImages() {
+            var images = [
+                "https://img.imsyy.top/bg/light/leaves-pattern.png",
+                "/images/webstack_banner_cn.png"
+            ];
+            
+            for (var i = 0; i < images.length; i++) {
+                var img = new Image();
+                img.src = images[i];
+            }
+        }
+        
+        // 页面加载完成后执行预加载
+        window.onload = preloadImages;
     </script>
 
     <script src="/js/header.min.js"></script>

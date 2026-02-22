@@ -23,6 +23,21 @@
     <script>
         var userDefinedSearchData = {};
         var expandAll = false;
+        
+        // 预加载图片
+        function preloadImages() {
+            var images = [
+                "/images/【AI 绘画】1女孩，赤脚.png"
+            ];
+            
+            for (var i = 0; i < images.length; i++) {
+                var img = new Image();
+                img.src = images[i];
+            }
+        }
+        
+        // 页面加载完成后执行预加载
+        window.onload = preloadImages;
     </script>
     <script src="/js/header.min.js"></script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -46,6 +61,13 @@
 
     <!-- 动漫风404专属样式 -->
     <style>
+        /* 优化背景图显示 */
+        body {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
         /* footer.main-footer {
             position: absolute;
             bottom: 0;
@@ -73,7 +95,7 @@
             height: 220px;
             margin-bottom: 20px;
             /* 二次元迷路少女插画（使用本地图片） */
-            background: url("/images/【AI 绘画】1女孩，赤脚.png") center/contain no-repeat;
+            background: url("/images/【AI 绘画】1女孩，赤脚.png") center/cover no-repeat;
             animation: bounce 2s ease-in-out infinite;
         }
         
