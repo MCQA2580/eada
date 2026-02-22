@@ -44,9 +44,8 @@ function updateCurrentTime() {
 
 // 更新背景图片
 function updateBackgroundImage() {
-    // 使用本地图片作为背景，确保背景能够正常显示
     const body = document.body;
-    body.style.backgroundImage = `linear-gradient(rgba(26, 26, 26, 0.7), rgba(38, 38, 38, 0.6)), url('/images/【AI 绘画】1女孩，赤脚.png')`;
+    body.style.backgroundImage = `url(https://www.dmoe.cc/random.php)`;
 }
 
 //页面加载时强制启用夜间模式并开始显示时间
