@@ -93,10 +93,10 @@ body {
 }
 
 .sidebar-menu .main-menu {
-    padding-left: 40px;
-    padding-right: 40px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     list-style: none
 }
 
@@ -122,8 +122,8 @@ body {
 
 .sidebar-menu .main-menu a>i {
     display: inline-block;
-    margin-right: 10px;
-    margin-bottom: 2px;
+    margin-right: 8px;
+    margin-bottom: 1px;
 }
 
 .sidebar-menu .main-menu a>span {
