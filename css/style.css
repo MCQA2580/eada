@@ -54,6 +54,7 @@ body {
     font-size: 1.95rem;
     transition: 0.3s;
     cursor: pointer;
+    color: #333333;
 }
 
 .logo-env .logo:hover {
@@ -107,6 +108,7 @@ body {
     align-items: center;
     font-size: 1.45rem;
     border-radius: 25px;
+    color: #333333;
 }
 
 .sidebar-menu .main-menu a:hover {
@@ -143,6 +145,10 @@ body {
     font-weight: bold;
     transition: 0.3s;
     box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar-menu .main-menu li.submit-tag a {
+    color: #333333;
 }
 
 .sidebar-menu .main-menu li.has-sub>a:before {
