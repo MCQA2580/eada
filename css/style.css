@@ -533,10 +533,9 @@ body {
 .box2 {
     height: 86px;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 16px;
     padding: 0 30px 0 30px;
     background-color: #fff;
-    border-radius: 4px;
     border: 1px solid #e4ecf3;
     margin: 10px 0 0 0;
     -webkit-transition: all .3s ease;
