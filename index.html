@@ -1251,6 +1251,34 @@
     
     // 每秒更新一次
     setInterval(updateTime, 1000);
+    
+    // 侧边栏点击事件处理
+    document.querySelectorAll('a.smooth').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // 移除所有活动状态
+            document.querySelectorAll('#main-menu li').forEach(function(li) {
+                li.classList.remove('active');
+            });
+            
+            // 添加当前活动状态
+            this.parentElement.classList.add('active');
+            
+            // 获取目标分类的 ID
+            var targetId = this.getAttribute('href');
+            var targetElement = document.querySelector(targetId);
+            
+            // 平滑滚动到目标位置
+            if (targetElement) {
+                var targetPosition = targetElement.offsetTop - 30;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 </script>
     <script src="/js/footer.js"></script>
 </body>

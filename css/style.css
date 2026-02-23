@@ -90,7 +90,7 @@ body {
     transition: 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
     display: block;
     position: relative;
-    width: 230px;
+    width: 180px;
     background: #ffffffa6;
     z-index: 1
 }
@@ -108,12 +108,12 @@ body {
 }
 
 .sidebar-menu .main-menu a {
-    padding: 8px 5px;
+    padding: 8px 10px;
     margin-bottom: 2px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     border-radius: 20px;
     color: #333333;
 }
