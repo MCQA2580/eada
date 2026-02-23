@@ -154,9 +154,7 @@ body {
     box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.15);
 }
 
-.sidebar-menu .main-menu li.submit-tag a {
-    color: #333333;
-}
+
 
 .sidebar-menu .main-menu li.has-sub>a:before {
     position: relative;
