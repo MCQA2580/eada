@@ -619,7 +619,7 @@ body {
     z-index: 1;
     padding: 30px;
     padding-bottom: 0;
-    padding-left: 260px;
+    padding-left: 30px;
     word-break: break-word;
     width: 100%;
     -webkit-transition: opacity .1s ease-in-out, padding-left .3s ease-in-out;
