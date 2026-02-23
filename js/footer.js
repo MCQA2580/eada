@@ -1,6 +1,9 @@
 $(document).ready(function () {
   //img lazy loaded
-  const observer = lozad();
+  const observer = lozad('.lozad', {
+    rootMargin: '0px',
+    threshold: 0
+  });
   observer.observe();
 
   $(document).on('click', '.has-sub', function () {
