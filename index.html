@@ -23,7 +23,7 @@
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
 
-    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
         var userDefinedSearchData = {};
@@ -32,8 +32,7 @@
         // 预加载图片
         function preloadImages() {
             var images = [
-                "https://www.dmoe.cc/random.php",
-                "/images/webstack_banner_cn.png"
+                "/images/loading.svg"
             ];
             
             for (var i = 0; i < images.length; i++) {
@@ -60,13 +59,13 @@
     <meta property="og:title" content="一个导航 - OneNav - OneNav">
     <meta property="og:description" content="OneNav">
     <meta property="og:site_name" content="一个导航 - OneNav - OneNav">
-    <meta property="og:image" content="/images/webstack_banner_cn.png">
+    <meta property="og:image" content="/images/favicon.png">
     <!-- / Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="一个导航 - OneNav - OneNav">
     <meta name="twitter:description" content="OneNav">
   
-  <meta name="twitter:image" content="/images/webstack_banner_cn.png">
+  <meta name="twitter:image" content="/images/favicon.png">
     <meta name="generator" content="Hexo 5.4.2">
 </head>
 
@@ -210,10 +209,6 @@
     
     <script>
         // 音乐弹窗功能
-        document.getElementById('music-btn').addEventListener('click', function() {
-            document.getElementById('music-modal').style.display = 'block';
-        });
-        
         document.getElementById('close-modal').addEventListener('click', function() {
             document.getElementById('music-modal').style.display = 'none';
         });
