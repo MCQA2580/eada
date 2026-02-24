@@ -10,15 +10,10 @@ async function handleRequest(request) {
   
   // 处理根路径请求
   if (path === '/') {
-    return await fetch('https://www.mcqa.qzz.io/index.html');
+    return await fetch('index.html');
   }
   
   // 处理静态文件请求
-  try {
-    // 直接返回静态文件，避免重定向循环
-    return await fetch(`https://www.mcqa.qzz.io${path}`);
-  } catch (error) {
-    // 如果文件不存在，返回 404 页面
-    return await fetch('https://www.mcqa.qzz.io/errors/index.html');
-  }
+  // 直接返回静态文件，避免重定向循环
+  return await fetch(path);
 }
