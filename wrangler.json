@@ -1,0 +1,11 @@
+{
+  "name": "eada",
+  "compatibility_date": "2026-02-24",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "."
+  },
+  "observability": {
+    "enabled": true
+  }
+}
