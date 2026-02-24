@@ -10,29 +10,15 @@ async function handleRequest(request) {
   
   // 处理根路径请求
   if (path === '/') {
-    return await serveStaticFile('/index.html');
+    return await fetch('https://www.mcqa.qzz.io/index.html');
   }
   
   // 处理静态文件请求
   try {
-    const response = await serveStaticFile(path);
-    return response;
+    // 直接返回静态文件，避免重定向循环
+    return await fetch(`https://www.mcqa.qzz.io${path}`);
   } catch (error) {
     // 如果文件不存在，返回 404 页面
-    return await serveStaticFile('/errors/404.html', 404);
+    return await fetch('https://www.mcqa.qzz.io/errors/index.html');
   }
-}
-
-async function serveStaticFile(path, status = 200) {
-  // 这里简化处理，实际部署时 Cloudflare Workers 会自动处理静态文件
-  // 此脚本主要用于本地开发和测试
-  return new Response(
-    `Static file: ${path}`,
-    {
-      status,
-      headers: {
-        'Content-Type': 'text/html',
-      },
-    }
-  );
 }
