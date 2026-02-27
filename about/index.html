@@ -60,6 +60,26 @@
         <div class="main-content">
             <nav class="navbar user-info-navbar" id="navbar" role="navigation">
                 <ul class="user-info-menu left-links list-inline list-unstyled">
+                    <li class="menu-item" style="margin-right: 15px;">
+                        <i class="fa-solid fa-cloud-sun" style="margin-right:6px"></i>
+                        <span id="weather-info">正在加载天气...</span>
+                        <script>
+                            // 简单的天气模拟数据
+                            function updateWeather() {
+                                const weatherData = [
+                                    { temp: '20°C', desc: '晴天' },
+                                    { temp: '18°C', desc: '多云' },
+                                    { temp: '22°C', desc: '阳光明媚' }
+                                ];
+                                const randomWeather = weatherData[Math.floor(Math.random() * weatherData.length)];
+                                document.getElementById('weather-info').textContent = `${randomWeather.temp} ${randomWeather.desc}`;
+                            }
+                            // 初始加载
+                            updateWeather();
+                            // 每10分钟更新一次
+                            setInterval(updateWeather, 10 * 60 * 1000);
+                        </script>
+                    </li>
                     <li class="menu-item" style="margin-left:auto;margin-right: 10px;">
                         <i class="fa-solid fa-message" style="margin-right:6px"></i>
                         <span id="jinrishici-sentence">正在加载今日诗词....</span>
